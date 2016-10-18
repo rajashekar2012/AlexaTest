@@ -11,48 +11,32 @@ app.get('/', function (req, res) {
 app.post('/alexaService', function (req, res) {
    console.log("Got a POST request alexa");
    //res.send('Hello POST');
-  var response= {
-  "version": "string",
+ var response={
+  "version": "1.0",
   "sessionAttributes": {
-    "string": object
+    "supportedHoriscopePeriods": {
+      "daily": true,
+      "weekly": false,
+      "monthly": false
+    }
   },
   "response": {
     "outputSpeech": {
-      "type": "string",
-      "text": "string",
-      "ssml": "string"
+      "type": "PlainText",
+      "text": "Today will provide you a new learning opportunity.  Stick with it and the possibilities will be endless. Can I help you with anything else?"
     },
     "card": {
-      "type": "string",
-      "title": "string",
-      "content": "string",
-      "text": "string",
-      "image": {
-        "smallImageUrl": "string",
-        "largeImageUrl": "string"
-      }
+      "type": "Simple",
+      "title": "Horoscope",
+      "content": "Today will provide you a new learning opportunity.  Stick with it and the possibilities will be endless."
     },
     "reprompt": {
       "outputSpeech": {
-        "type": "string",
-        "text": "string",
-        "ssml": "string"
+        "type": "PlainText",
+        "text": "Can I help you with anything else?"
       }
     },
-    "directives": [
-      {
-        "type": "string",
-        "playBehavior": "string",
-        "audioItem": {
-          "stream": {
-            "token": "string",
-            "url": "string",
-            "offsetInMilliseconds": 0
-          }
-        }
-      }
-    ],
-    "shouldEndSession": boolean
+    "shouldEndSession": false
   }
 }
 
