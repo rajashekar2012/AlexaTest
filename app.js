@@ -8,8 +8,8 @@ app.get('/', function (req, res) {
 })
 
 // This responds a POST request for the homepage
-app.post('/', function (req, res) {
-   //console.log("Got a POST request for the homepage");
+app.post('/alexaService', function (req, res) {
+   console.log("Got a POST request alexa");
    //res.send('Hello POST');
   var response= {
   "version": "string",
